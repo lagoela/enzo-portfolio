@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@layer base;
+
+:root {
+  color: #38383a;
+  background-color: #f4ebd3;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+}
+
+.roboto {
+  font-family: "Roboto Mono", monospace;
+}
