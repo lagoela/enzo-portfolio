@@ -13,7 +13,7 @@ function App() {
           </h2>
         </div>
 
-        <div className="flex flex-col items-end">
+        <div className="hidden md:flex flex-col items-end">
           <img
             src="me.png"
             alt="Enzo's picture"
@@ -22,7 +22,17 @@ function App() {
           <span>Enzo in his prime!</span>
         </div>
       </div>
-      <div className="flex min-h-full flex-1/2 items-end justify-end p-8">
+      
+      <div className="md:hidden flex flex-col flex-1 justify-center items-center">
+        <img
+          src="me.png"
+          alt="Enzo's picture"
+          className="w-[300px] h-[300px] rounded-sm"
+        />
+        <span>Enzo in his prime!</span>
+      </div>
+
+      <div className="flex min-h-full md:flex-1/2 md:items-end md:justify-end p-8 justify-center">
         <a href="/projects">
           <div className="-space-y-6 flex flex-col items-center">
             <h2 className="roboto font-light text-[2.5em]">This is</h2>
