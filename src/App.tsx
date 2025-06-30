@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./App.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { LiaLinkedin } from "react-icons/lia";
 
 function App() {
   return (
