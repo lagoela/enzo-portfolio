@@ -29,7 +29,7 @@ function App() {
             alt="Enzo's picture"
             className="w-[300px] h-[300px] rounded-sm"
           />
-          <span>Enzo Lagoela, 📍 his strongest formœ</span>
+          <span>Enzo Lagoela, 📍 his strongest form</span>
         </div>
       </div>
 
