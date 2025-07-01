@@ -94,7 +94,7 @@ export default function App() {
 
             <div className="mt-6 lg:absolute lg:-bottom-8 lg:-right-4 xl:-right-8">
               <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-xl border">
-                <div className="text-center lg:text-right space-y-2">
+                <div className="text-center lg:text-left space-y-1">
                   <p className="text-xs sm:text-sm text-gray-600">This is</p>
                   <h2 className="text-2xl sm:text-3xl font-black text-gray-900">ENZO!</h2>
                   <Button
@@ -148,7 +148,7 @@ export default function App() {
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Let's Work Together</h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-            I'm always interested in new opportunities and challenging backend projects.
+            Feel free to contact me for any collaboration, freelance opportunities, or just to connect and chat about backend development!
           </p>
           <Button
             className="bg-gray-900 hover:bg-gray-800 text-white rounded-full px-6 sm:px-8 text-sm sm:text-base touch-manipulation min-h-[44px]"
