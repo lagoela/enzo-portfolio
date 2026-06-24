@@ -5,11 +5,24 @@ import { Button } from "./components/ui/button.tsx";
 import { Card, CardContent } from "./components/ui/card.tsx";
 
 export default function App() {
-  const projects = [
+  const projects: {
+    title: string;
+    description: string;
+    tech: string[];
+    website?: string;
+    github?: string;
+  }[] = [
     {
       title: "Image Toolbox",
       description: "CLI Application using Go to manipulate images",
       tech: ["Go", "Cobra"],
+      github: "https://github.com/lagoela/img-toolbox",
+    },
+    {
+      title: "Obscvra Website",
+      description: "E-commerce for my clothing company, Obscvra",
+      tech: ["Python", "React", "Stripe"],
+      website: "https://obscvra.shop",
     },
   ];
 
@@ -17,24 +30,31 @@ export default function App() {
     <div className="min-h-screen bg-[#f5f1e8] relative overflow-hidden">
       {/* Main Content */}
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center lg:min-h-[80vh]">
           {/* Left Content */}
-          <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
+          <div className="space-y-6 sm:space-y-8 order-1 lg:order-1">
             <div className="space-y-3 sm:space-y-4">
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-light leading-tight">
-                I'm a <span className="font-bold text-gray-900">backend</span>{" "}
-                developer
+                I'm a{" "}
+                <span className="font-bold text-gray-900">
+                  software developer
+                </span>{" "}
               </h1>
-              <p className="text-base sm:text-lg text-gray-600 font-light">
-                - Mostly developing in Go and Java.
-              </p>
+              <div>
+                <p className="text-base sm:text-lg text-gray-600 font-light">
+                  - Mostly developing full stack applications
+                </p>
+                <p className="text-base sm:text-lg text-gray-600 font-light">
+                  Metal Guitarist in my free time
+                </p>
+              </div>
             </div>
 
             {/* Social Links */}
             <div className="flex gap-3 sm:gap-4">
               <a
                 href="https://github.com/lagoela"
-                className="p-2 sm:p-3 hover:bg-gray-200 rounded-full transition-colors touch-manipulation"
+                className="inline-flex items-center justify-center p-2 sm:p-3 hover:bg-gray-200 rounded-full transition-colors touch-manipulation"
                 aria-label="GitHub Profile"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -43,7 +63,7 @@ export default function App() {
               </a>
               <a
                 href="https://linkedin.com/in/enzolagoela"
-                className="p-2 sm:p-3 hover:bg-gray-200 rounded-full transition-colors touch-manipulation"
+                className="inline-flex items-center justify-center p-2 sm:p-3 hover:bg-gray-200 rounded-full transition-colors touch-manipulation"
                 aria-label="LinkedIn Profile"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -52,7 +72,7 @@ export default function App() {
               </a>
               <a
                 href="mailto:lagoela.dev@gmail.com"
-                className="p-2 sm:p-3 hover:bg-gray-200 rounded-full transition-colors touch-manipulation"
+                className="inline-flex items-center justify-center p-2 sm:p-3 hover:bg-gray-200 rounded-full transition-colors touch-manipulation"
                 aria-label="Email Contact"
               >
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
@@ -64,7 +84,15 @@ export default function App() {
                 Technologies
               </h3>
               <div className="flex flex-wrap gap-2">
-                {["Go", "Java", "PostgreSQL", "Docker", "React"].map((tech) => (
+                {[
+                  "Python",
+                  "React",
+                  "FastAPI",
+                  "Docker",
+                  "AWS",
+                  "C#",
+                  ".NET",
+                ].map((tech) => (
                   <span
                     key={tech}
                     className="px-2 sm:px-3 py-1 bg-white/60 rounded-full text-xs sm:text-sm text-gray-700 border border-gray-200"
@@ -77,22 +105,22 @@ export default function App() {
           </div>
 
           {/* Right Content */}
-          <div className="relative order-2">
+          <div className="relative order-2 lg:order-2">
             {/* Profile Card */}
             <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
               <CardContent className="p-4 sm:p-6">
                 <div className="relative mb-3 sm:mb-4">
                   <img
-                    src="me.png"
+                    src="me.jpg"
                     alt="Enzo Lagoela"
-                    className="w-full h-64 sm:h-80 object-cover rounded-lg"
+                    className="w-full aspect-square object-cover object-[50%_20%] rounded-lg"
                   />
                 </div>
               </CardContent>
             </Card>
 
             <div className="mt-6 lg:absolute lg:-bottom-8 lg:-right-4 xl:-right-8">
-              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-xl border">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-xl border max-w-xs mx-auto lg:max-w-none lg:mx-0">
                 <div className="text-center lg:text-left space-y-1">
                   <p className="text-xs sm:text-sm text-gray-600">This is</p>
                   <h2 className="text-2xl sm:text-3xl font-black text-gray-900">
@@ -133,31 +161,72 @@ export default function App() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="bg-white hover:shadow-lg transition-shadow"
-              >
-                <CardContent className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            {projects.map((project, index) => {
+              const primaryLink = project.website ?? project.github;
+              return (
+                <Card
+                  key={index}
+                  className={`bg-white hover:shadow-lg transition-shadow${primaryLink ? " cursor-pointer" : ""}`}
+                  onClick={
+                    primaryLink
+                      ? () =>
+                          window.open(
+                            primaryLink,
+                            "_blank",
+                            "noopener,noreferrer",
+                          )
+                      : undefined
+                  }
+                >
+                  <CardContent className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 bg-gray-100 rounded text-xs text-gray-700"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    {(project.website || project.github) && (
+                      <div className="flex gap-3 pt-2 border-t border-gray-100">
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="text-gray-500 hover:text-gray-900 transition-colors"
+                            aria-label="GitHub repository"
+                          >
+                            <Github className="w-4 h-4" />
+                          </a>
+                        )}
+                        {project.website && (
+                          <a
+                            href={project.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="text-gray-500 hover:text-gray-900 transition-colors"
+                            aria-label="Project website"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
